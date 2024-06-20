@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>view</title>
+</head>
+<body>
+<a href="/user/create">Create new user</a>
+<br><br>
+<a href="/user">Back to list</a>
+<h3>View user</h3>
+
+<label><b>Name</b></label><br>
+<p th:text="${user.name}"/></p>
+
+<label><b>Age</b></label><br>
+<p th:text="${user.age}"/></p>
+
+<label><b>Phone Number</b></label><br>
+<p th:text="${user.phoneNumber}"/></p>
+
+<label><b>Email</b></label><br>
+<p th:text="${user.email}"/></p>
+
+<button type="button"><a th:href="@{/user/edit/{id}(id = ${user.id})}">Edit</a></button>
+<br><br>
+<button type="button"><a th:href="@{/user/delete/{id}(id = ${user.id})}">Delete</a></button>
+</body>
+</html>
